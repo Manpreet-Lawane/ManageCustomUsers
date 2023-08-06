@@ -44,10 +44,12 @@ class UserLoginView(views.APIView):
 
 
 class UserLogoutView(views.APIView):
-    permission_classes = [permissions.IsAuthenticated]
 
     def post(self, request):
         logout(request)
+        token = request.COOKIES.get('jwt')
+        if token:
+            request.COOKIES.pop('jwt', None)
         return Response({'message': 'Logout successful'}, status=status.HTTP_200_OK)
 
 

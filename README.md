@@ -42,6 +42,12 @@ Authenticate users with register, login, homepage, logout and rest password API'
   * copy token from login and paste after home url
     * i.e localhost/auth/home/?token=<copied token>
 
+
+* Logout url json body:
+  * go to body in postman, and give key value : 
+```
+'AUTHORIZATION': Bearer <jwt token>
+```
 * Reset password json body:
 ```
 {"email":"abc@gmail.com",

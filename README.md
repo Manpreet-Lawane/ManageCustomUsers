@@ -25,7 +25,28 @@ Authenticate users with register, login, homepage, logout and rest password API'
 * python manage.py migrate
 * python manage.py runserver
 ```
+* Register url json body:
+```
+{"email":"abc@gmail.com",
+"username": "abc",
+"password": "abc",
+"user_type":"superuser"}
+```
+* login url json body:
+```
+{"email":"abc@gmail.com",
+"username": "abc",
+"password": "abc"}
+```
+* Home url:
+  * copy token from login and paste after home url
+    * i.e localhost/auth/home/?token=<copied token>
 
+* Reset password json body:
+```
+{"email":"abc@gmail.com",
+"password": "abcd"}
+```
 ## Version History
 
 * 0.1
